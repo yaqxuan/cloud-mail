@@ -1,0 +1,39 @@
+name = "cloud-mail-com"
+main = "src/index.js"
+compatibility_date = "2025-06-04"
+keep_vars = true
+
+[observability]
+enabled = true
+
+[[d1_databases]]
+binding = "db"
+database_name = "cloud-mail-com"
+database_id = "87d005a8-6782-4cd4-827b-0e36366e160e"
+
+[[kv_namespaces]]
+binding = "kv"
+id = "3d9120a36ee243039b1e007ec250dc20"
+
+[ai]
+binding = "ai"
+
+[assets]
+binding = "assets"
+directory = "./dist"
+not_found_handling = "single-page-application"
+run_worker_first = true
+
+[[routes]]
+pattern = "mail.yaqxuan.com"
+custom_domain = true
+
+[triggers]
+crons = ["0 * * * *"]
+
+[vars]
+domain = ["yaqxuan.com"]
+admin = "adminmail@yaqxuan.com"
+
+[build]
+command = "pnpm --prefix ../mail-vue install && pnpm --prefix ../mail-vue run build"
