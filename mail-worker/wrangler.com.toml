@@ -28,6 +28,14 @@ run_worker_first = true
 pattern = "mail.yaqxuan.com"
 custom_domain = true
 
+[[routes]]
+pattern = "mail.sylira.tech"
+custom_domain = true
+
+[[routes]]
+pattern = "mail.yaqxuan.tech"
+custom_domain = true
+
 [triggers]
 crons = ["0 * * * *"]
 
